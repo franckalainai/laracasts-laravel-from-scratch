@@ -19,4 +19,6 @@ Route::get('/about', function(){
     return view('about', ['articles' => App\Article::latest()->get()]);
 });
 Route::get('/articles', 'ArticlesController@index');
+Route::get('/articles/create', 'ArticlesController@create');
+Route::post('/articles', 'ArticlesController@store');
 Route::get('/articles/{article}', 'ArticlesController@show');
